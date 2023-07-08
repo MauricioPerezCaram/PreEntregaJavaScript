@@ -1,5 +1,5 @@
-let nombreUsuario = prompt("Ingresa tu nombre: ");
-alert("Hola " + nombreUsuario + "! Bienvenido");
+// let nombreUsuario = prompt("Ingresa tu nombre: ");
+// alert("Hola " + nombreUsuario + "! Bienvenido");
 
 let intentos = 0;
 let usuarioValido = "Admin";
@@ -21,7 +21,7 @@ console.log("Recarga la página");
 } else {
 alert("Bienvenido al programa.");
 let decision = prompt ("Queres saber como organizar tus gastos? Contesta Si o No")
-if (decision == "Si"){      // cambiar que ignore si esta en mayúsculas o minúsculas
+if (decision.toLowerCase() == "Si".toLowerCase()){      // cambiar que ignore si esta en mayúsculas o minúsculas
     let sueldo = parseFloat(prompt("Ingresá tu sueldo: "));
     console.log("Teniendo en cuenta que tu sueldo es de $" + sueldo + ", tus gastos deberian dividirse así:");
     gastosCasa = 35*sueldo/100
@@ -35,7 +35,7 @@ if (decision == "Si"){      // cambiar que ignore si esta en mayúsculas o minú
     console.log("Deberías gastar como máximo: $ " + gastosEntretenimiento + " en entretenimiento. Esto corresponde a un 8% de tu sueldo.");
     console.log("Deberías gastar como máximo: $ " + Invertir + " en invertir. Esto corresponde a un 20% de tu sueldo.");
     console.log("Debes tener en cuenta que todos estos gastos serían lo ideal para mantener ordenadas las finanzas personales.");
-} else if (decision == "No"){       // cambiar que ignore si esta en mayúsculas o minúsculas
+} else if (decision.toLowerCase() == "No".toLowerCase()){       // cambiar que ignore si esta en mayúsculas o minúsculas
     console.log("Elegiste no tener detalle de cómo dividir tus gastos. Fin del programa.");
 } else {
     console.log("Debes ingresar si o no. Recarga la página para volver a empezar.");
