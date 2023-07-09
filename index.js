@@ -1,5 +1,8 @@
-let nombreUsuario = prompt("Ingresa tu nombre: ");
-alert("Hola " + nombreUsuario + "! Bienvenido");
+function saludar() {
+  let nombreUsuario = prompt("Ingresa tu nombre: ");
+  alert("Hola " + nombreUsuario + "! Bienvenido");
+}
+saludar();
 
 let intentos = 0;
 let usuarioValido = "Admin";            //al pedo esto, puedo evitar declarar usuarioValido y hacerlo directamente en el prompt si es distnto a admin
