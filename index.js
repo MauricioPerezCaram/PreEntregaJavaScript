@@ -32,7 +32,11 @@ while (decision.toLowerCase() !== "si" && decision.toLowerCase() !== "no") {
   decision = prompt("Ingresa SI o NO para avanzar");
 }
 if (decision.toLowerCase() === "si") {
-  let sueldo = parseFloat(prompt("Ingresa tu sueldo: "));
+  let sueldo = parseFloat(prompt("Ingresa tu sueldo (solo números): "));
+  while (isNaN(sueldo)){
+    alert("Debes ingresar un numero")
+    sueldo = parseFloat(prompt("Ingresa tu sueldo (solo números): "));
+  }
   console.log("Teniendo en cuenta que tu sueldo es de $" + sueldo + ", tus gastos deberían dividirse así:");
   gastosCasa = 35 * sueldo / 100;
   gastosVivir = 22 * sueldo / 100;
