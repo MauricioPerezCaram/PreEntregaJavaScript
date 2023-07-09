@@ -5,20 +5,24 @@ function saludar() {
 saludar();
 
 let intentos = 0;
-let usuarioValido = "Admin";            //al pedo esto, puedo evitar declarar usuarioValido y hacerlo directamente en el prompt si es distnto a admin
-let contrasenaValida = "admin123";
 
 let usuario = prompt("Ingresa tu nombre de usuario administrador (Admin)").toLowerCase();
 let contrasena = prompt("Ingresa la contraseña de administrador (admin123)").toLowerCase();
-
-while ((usuario !== usuarioValido.toLowerCase() || contrasena !== contrasenaValida.toLowerCase()) && intentos < 2) {
-  alert("El usuario o contraseña son incorrectos. Intenta nuevamente.");
-  intentos++;
+function pedirUsuario(){
   usuario = prompt("Ingresa un nombre de usuario administrador (Admin)").toLowerCase();
+}
+function pedirContrasena() {
   contrasena = prompt("Ingresa una contraseña de administrador (admin123)").toLowerCase();
 }
 
-if (intentos === 2 && (usuario !== usuarioValido || contrasena !== contrasenaValida)) {
+while ((usuario !== "admin".toLowerCase() || contrasena !== "admin123".toLowerCase()) && intentos < 2) {
+  intentos++;
+  alert("El usuario o contraseña son incorrectos. Te quedan " + (3-intentos) + " intentos.");
+  pedirUsuario();
+  pedirContrasena();
+}
+
+if (intentos === 2 && (usuario !== "admin".toLowerCase() || contrasena !== "admin123".toLowerCase())) {
 alert("Intentaste muchas veces. Acceso denegado.");
 console.log("Recarga la página");
 } else {
@@ -41,7 +45,7 @@ if (decision.toLowerCase() === "si") {
   console.log("Deberías gastar como máximo: $ " + gastosEntretenimiento + " en entretenimiento. Esto corresponde a un 8% de tu sueldo.");
   console.log("Deberías gastar como máximo: $ " + Invertir + " en invertir. Esto corresponde a un 20% de tu sueldo.");
   console.log("Debes tener en cuenta que todos estos gastos serían lo ideal para mantener ordenadas las finanzas personales.");
-} else (decision.toLowerCase() === "no")
+} else if (decision.toLowerCase() === "no")
   console.log("Elegiste no tener detalle de cómo dividir tus gastos. Fin del programa.");
 }
 
